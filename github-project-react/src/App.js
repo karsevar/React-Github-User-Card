@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import UserList from './components/UserList';
+import SearchForm from './components/SearchForm';
 
 import './App.css';
 
@@ -9,13 +10,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      userData: []
+      userData: [],
+      searchUser: 'tetondan'
     }
   }
   
   componentDidMount() {
     axios
-      .get('https://api.github.com/users/tetondan')
+      .get(`https://api.github.com/users/${this.state.searchUser}`)
       .then(results => { 
         // console.log('main user info', results.data)
 
@@ -50,6 +52,7 @@ class App extends Component {
     // console.log('In render', this.state);
     return (
       <div className="App">
+        {/* <SearchForm /> */}
         <UserList userData={this.state.userData} />
       </div>
     );
