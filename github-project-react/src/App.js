@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import UserList from './components/UserList';
+
 import './App.css';
 
 class App extends Component {
@@ -45,10 +47,10 @@ class App extends Component {
   }
   
   render() {
-    console.log('In render', this.state);
+    // console.log('In render', this.state);
     return (
       <div className="App">
-        <p>Component Mounted</p>
+        <UserList userData={this.state.userData} />
       </div>
     );
   }
