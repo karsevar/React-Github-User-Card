@@ -8,7 +8,7 @@ const UserCard = ({user}) => {
             <Card.Content>
                 <Card.Header>{user.name}</Card.Header>
                 <Card.Meta>
-                    <span className='username'>{user.login}</span>
+                    <a href={user.html_url} className='username'>{user.login}</a>
                 </Card.Meta>
                 <Card.Description>
                     {user.bio}

@@ -10,7 +10,7 @@ const UserListDiv = styled.div`
 `;
 
 const UserList = props => {
-    // console.log('from UserList', props);
+    console.log('from UserList', props);
     return (
         <UserListDiv>
             {props.userData.map((user, index) => {
